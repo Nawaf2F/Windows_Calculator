@@ -1,0 +1,143 @@
+.app {
+  text-align: center;
+  padding: 20px;
+  background: #f0f0f0;
+  min-height: 100vh;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+.calculator-select {
+  width: 200px;
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  font-size: 16px;
+  background: white;
+}
+
+.calculator-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+// Calculator.scss
+.calculator-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  max-width: 800px;
+  width: 100%;
+
+  .calculator {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+
+    .main-calculator {
+      flex: 1;
+      
+      .display {
+        background: white;
+        padding: 20px;
+        text-align: right;
+        font-size: 2em;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      .keypad {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+
+        button {
+          padding: 15px;
+          font-size: 1.2em;
+          border: none;
+          background: white;
+          border-radius: 4px;
+          cursor: pointer;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          transition: all 0.2s;
+
+          &:hover {
+            background: #f5f5f5;
+          }
+
+          &:active {
+            background: #e0e0e0;
+          }
+
+          &.equals {
+            background: #007bff;
+            color: white;
+          }
+        }
+      }
+    }
+
+    .history-panel {
+      width: 300px;
+      background: white;
+      padding: 20px;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+      h3 {
+        margin: 0 0 15px 0;
+        text-align: left;
+      }
+
+      .history-list {
+        max-height: 500px;
+        overflow-y: auto;
+        text-align: left;
+      }
+
+      .history-item {
+        padding: 8px;
+        border-bottom: 1px solid #eee;
+      }
+    }
+  }
+
+  // Unit converter specific styles
+  &.converter {
+    .converter-content {
+      flex: 1;
+      
+      .input-group, .output-group {
+        margin-bottom: 15px;
+        display: flex;
+        gap: 10px;
+
+        input, select {
+          padding: 8px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+        }
+
+        input {
+          flex: 1;
+          text-align: right;
+        }
+      }
+
+      .result {
+        font-size: 2em;
+        text-align: center;
+        margin: 20px 0;
+      }
+    }
+  }
+}
